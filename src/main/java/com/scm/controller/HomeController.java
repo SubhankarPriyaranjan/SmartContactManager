@@ -17,4 +17,10 @@ public class HomeController {
        
         return "home";
     }
+
+    //about router 
+@RequestMapping("/about")
+    public String aboutPage(){
+        return "about";
+    }
 }
