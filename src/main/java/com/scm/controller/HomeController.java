@@ -23,4 +23,12 @@ public class HomeController {
     public String aboutPage(){
         return "about";
     }
+
+    //services router 
+    @RequestMapping("/services")
+    public String servicesPage(){
+        return "services";
+    }
+
+    
 }
