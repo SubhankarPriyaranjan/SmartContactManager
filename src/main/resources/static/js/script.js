@@ -1,8 +1,10 @@
-document.addEventListener('DOMContentLoaded', function() {
-    
 
+
+//This is for Dark and light mode 
+document.addEventListener('DOMContentLoaded', function() {
     let currentTheme = getTheme();
     changeTheme(currentTheme);
+    
 
     function changeTheme(initialTheme) {
         currentTheme = initialTheme;
@@ -43,3 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
         return theme ? theme : "light";
     }
 });
+
+
+//End of dark and light theme 
