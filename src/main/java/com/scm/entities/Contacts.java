@@ -17,11 +17,10 @@ import jakarta.persistence.OneToMany;
 public class Contacts {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private String email;
-    private String phone;
+    private String phoneNumber;
     private String address;
     private String picture;
     @Column(length = 1000)
