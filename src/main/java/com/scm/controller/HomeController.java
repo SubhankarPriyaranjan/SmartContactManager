@@ -19,7 +19,7 @@ public class HomeController {
     }
 
     //about router 
-@RequestMapping("/about")
+    @RequestMapping("/about")
     public String aboutPage(){
         return "about";
     }
@@ -30,5 +30,22 @@ public class HomeController {
         return "services";
     }
 
+    //contact router 
+    @RequestMapping("/contact")
+    public String contactPage(){
+        return "contact";
+    }
+
+    //login router 
+    @RequestMapping("/login")
+    public String Login(){
+        return "login";
+    }
+
+    //register router 
+    @RequestMapping("/register")
+    public String Register(){
+        return "register";
+    }
     
 }

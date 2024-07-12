@@ -1,14 +1,30 @@
 <!DOCTYPE html>
-<html lang="en"  
-th:fragment="parent"
+<html class="light"
+lang="en"  
+th:fragment="parent(content, title)"
 xmlns:th="http://www.thymeleaf.org">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Base Page</title>
+    <title data-th-replace="${title}">Base Page</title>
+    <!-- Tailwind CDN -->
     <link rel="stylesheet" data-th-href="@{/css/output.css}">
+<!-- FlowBite CDN -->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script data-th-src="@{'/js/script.js'}"></script>
 </head>
-<body>
-    base layout
+<body class="h-screen w-full dark:bg-gray-900 dark:text-white">
+
+    <div th:replace="navbar::navbar"></div>
+
+
+   
+        <section data-th-replace="${content}"></section>
+   
+     <!-- Flowbite CDN -->
+     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+     
 </body>
 </html>
