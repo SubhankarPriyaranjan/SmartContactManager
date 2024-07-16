@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.scm.entities.User;
 import com.scm.forms.UserForm;
+import com.scm.helper.Message;
+import com.scm.helper.MessageType;
 import com.scm.services.UserService;
+
+import jakarta.servlet.http.HttpSession;
 
 
 
@@ -72,7 +76,7 @@ private UserService userService;
     
     
     @RequestMapping(value = "/do-register", method = RequestMethod.POST)
-    public String processRegister( @ModelAttribute UserForm userForm ){
+    public String processRegister( @ModelAttribute UserForm userForm,HttpSession session ){
         //fetch from data
 
         // User user=User.builder()
@@ -94,6 +98,10 @@ private UserService userService;
        User savedUser= userService.saveUser(user);
       System.out.println("User Saved"+savedUser);
        
+    //   Message message = Message.builder()
+    //   .content("User Registered Successfully")
+    //   .build();
+    session.setAttribute("message", "User Registered Successfully");
         return "redirect:/register";
     }
 }
