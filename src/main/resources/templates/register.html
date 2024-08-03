@@ -67,6 +67,7 @@
                         <div class="text-center mb-10">
                             <h1 class="font-bold text-3xl text-gray-900">REGISTER</h1>
                             <p>Enter your information to register</p>
+                            <div data-th-replace="message::messagebox"></div>
                         </div>
                         <div>
                             <form th:action="@{'/do-register'}" method="post" th:object="${userform}">
